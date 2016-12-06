@@ -1,5 +1,5 @@
 {
-  "name": "events",
+  "name": "flexui/events",
   "version": "0.0.1",
   "description": "The flex ui event emitter tools.",
   "author": {
