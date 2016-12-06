@@ -1,5 +1,5 @@
 {
-  "name": "flexui/events",
+  "name": "@flexui/events",
   "version": "0.0.1",
   "description": "The flex ui event emitter tools.",
   "author": {
@@ -21,7 +21,7 @@
   ],
   "jsnext:main": "events.js",
   "dependencies": {
-    "flexui/utils": "https://github.com/flexui/utils/archive/master.tar.gz"
+    "@flexui/utils": "https://github.com/flexui/utils/archive/master.tar.gz"
   },
   "readmeFilename": "README.md"
 }
