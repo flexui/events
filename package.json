@@ -19,7 +19,7 @@
   "keywords": [
     "events"
   ],
-  "main": "events.js",
+  "jsnext:main": "events.js",
   "dependencies": {
     "utils": "https://github.com/flexui/utils/archive/master.tar.gz"
   },
