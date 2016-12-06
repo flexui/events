@@ -1,4 +1,4 @@
-import * as Utils from 'utils';
+import * as Utils from 'flexui/utils';
 
 var slice = Utils.AP.slice;
 
