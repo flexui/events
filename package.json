@@ -21,7 +21,7 @@
   ],
   "jsnext:main": "events.js",
   "dependencies": {
-    "utils": "https://github.com/flexui/utils/archive/master.tar.gz"
+    "flexui/utils": "https://github.com/flexui/utils/archive/master.tar.gz"
   },
   "readmeFilename": "README.md"
 }
