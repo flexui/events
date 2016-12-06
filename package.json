@@ -1,0 +1,26 @@
+{
+  "name": "events",
+  "version": "0.0.1",
+  "description": "The flex ui event emitter tools.",
+  "author": {
+    "name": "nuintun",
+    "email": "nuintun@qq.com"
+  },
+  "homepage": "https://flexui.github.io/events",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/flexui/events.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flexui/events/issues",
+    "email": "nuintun@qq.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "utils"
+  ],
+  "dependencies": {
+    "utils": "https://github.com/flexui/utils/archive/master.tar.gz"
+  },
+  "readmeFilename": "README.md"
+}
