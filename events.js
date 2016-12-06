@@ -1,4 +1,4 @@
-import * as Utils from '../utils/util';
+import * as Utils from '../utils/utils';
 
 var slice = Utils.AP.slice;
 
