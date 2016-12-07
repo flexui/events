@@ -36,16 +36,22 @@ Events.prototype = {
     var data = slice.call(arguments, 1);
     var e = context.e || (context.e = {});
     var listeners = e[name] || [];
+
+    var result;
     var listener;
+    var returned;
 
     // emit events
     for (var i = 0, length = listeners.length; i < length; i++) {
       listener = listeners[i];
+      result = Utils.apply(listener.fn, listener.context, data);
 
-      Utils.apply(listener.fn, listener.context, data);
+      if (returned !== false) {
+        returned = result;
+      }
     }
 
-    return context;
+    return returned;
   },
   off: function(name, listener, context) {
     var self = this;
