@@ -10,11 +10,11 @@ export default function Events() {
 Events.prototype = {
   on: function(name, listener, context) {
     var self = this;
-    var e = self.e || (self.e = {});
+    var events = self.__events || (self.__events = {});
 
     context = arguments.length < 3 ? self : context;
 
-    (e[name] || (e[name] = [])).push({
+    (events[name] || (events[name] = [])).push({
       fn: listener,
       context: context
     });
@@ -34,8 +34,8 @@ Events.prototype = {
   emit: function(name) {
     var context = this;
     var data = slice.call(arguments, 1);
-    var e = context.e || (context.e = {});
-    var listeners = e[name] || [];
+    var events = context.__events || (context.__events = {});
+    var listeners = events[name] || [];
 
     var result;
     var listener;
@@ -55,19 +55,19 @@ Events.prototype = {
   },
   off: function(name, listener, context) {
     var self = this;
-    var e = self.e || (self.e = {});
+    var events = self.__events || (self.__events = {});
     var length = arguments.length;
 
     switch (length) {
       case 0:
-        self.e = {};
+        self.__events = {};
         break;
       case 1:
-        delete e[name];
+        delete events[name];
         break;
       default:
         if (listener) {
-          var listeners = e[name];
+          var listeners = events[name];
 
           if (listeners) {
             context = length < 3 ? self : context;
@@ -84,7 +84,7 @@ Events.prototype = {
             // Suggested by https://github.com/lazd
             // Ref: https://github.com/scottcorgan/tiny-emitter/commit/c6ebfaa9bc973b33d110a84a307742b7cf94c953#commitcomment-5024910
             if (!listeners.length) {
-              delete e[name];
+              delete events[name];
             }
           }
         }
