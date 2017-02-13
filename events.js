@@ -76,7 +76,7 @@ Events.prototype = {
             var event;
 
             for (var i = 0; i < length; i++) {
-              event = events[i];
+              event = listeners[i];
               
               if (event.fn === listener && event.context === context) {
                 listeners.splice(i, 1);
