@@ -55,8 +55,8 @@ Events.prototype = {
   },
   off: function(name, listener, context) {
     var self = this;
-    var events = self.__events || (self.__events = {});
     var length = arguments.length;
+    var events = self.__events || (self.__events = {});
 
     switch (length) {
       case 0:
@@ -72,9 +72,13 @@ Events.prototype = {
           if (listeners) {
             context = length < 3 ? self : context;
             length = listeners.length;
+            
+            var event;
 
             for (var i = 0; i < length; i++) {
-              if (events[i].fn === listener && events[i].fn.context === context) {
+              event = events[i];
+              
+              if (event.fn === listener && event.context === context) {
                 listeners.splice(i, 1);
                 break;
               }
