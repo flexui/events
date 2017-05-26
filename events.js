@@ -23,9 +23,11 @@ Events.prototype = {
   },
   once: function(name, listener, context) {
     var self = this;
+    
+    context = arguments.length < 3 ? self : context;
 
     function feedback() {
-      self.off(name, feedback);
+      self.off(name, feedback, this);
       Utils.apply(listener, this, arguments);
     };
 
